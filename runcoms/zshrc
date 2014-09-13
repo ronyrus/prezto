@@ -11,3 +11,39 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
 fi
 
 # Customize to your needs...
+export EDITOR='vim'
+export VISUAL='gvim'
+
+#export PYENV_ROOT=/usr/local/opt/pyenv
+#if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
+
+export PYTHONPATH=$HOME/Work/
+
+export NDK_ROOT=$HOME/Work/android/android-ndk-r10
+export NDK_TOOLCHAIN=$NDK_ROOT/toolchains/arm-linux-androideabi-4.8/prebuilt/darwin-x86_64/bin/arm-linux-androideabi
+
+export ANDROID_SDK_ROOT=$HOME/Work/android/adt-bundle-mac-x86_64-20140702/sdk
+export ANDROID_PLATFORM_TOOLS=$ANDROID_SDK_ROOT/platform_tools
+
+alias xgcc=$NDK_TOOLCHAIN-gcc
+alias xld=$NDK_TOOLCHAIN-ld
+alias xar=$NDK_TOOLCHAIN-ar
+alias xas=$NDK_TOOLCHAIN-as
+alias xelfedit=$NDK_TOOLCHAIN-xelfedit
+alias xgdb=$NDK_TOOLCHAIN-gdb
+alias xnm=$NDK_TOOLCHAIN-nm
+alias xobjcopy=$NDK_TOOLCHAIN-objcopy
+alias xobjdump=$NDK_TOOLCHAIN-objdump
+alias xrunlib=$NDK_TOOLCHAIN-runlib
+alias xreadelf=$NDK_TOOLCHAIN-readelf
+alias xsize=$NDK_TOOLCHAIN-size
+alias xstrings=$NDK_TOOLCHAIN-strings
+alias xstrip=$NDK_TOOLCHAIN-strip
+
+if [[ -s "${ZDOTDIR:-$HOME}/.secrets" ]]; then
+  source "${ZDOTDIR:-$HOME}/.secrets"
+fi
+
+if [[ -s "${ZDOTDIR:-$HOME}/.zaliases" ]]; then
+  source "${ZDOTDIR:-$HOME}/.zaliases"
+fi
