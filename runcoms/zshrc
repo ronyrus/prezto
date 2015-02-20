@@ -17,13 +17,18 @@ export VISUAL='gvim'
 #export PYENV_ROOT=/usr/local/opt/pyenv
 #if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 
+# auto-correction is driving me nuts
+unsetopt correct
+
 export PYTHONPATH=$HOME/Work/
 
 export NDK_ROOT=$HOME/Work/android/android-ndk-r10
 export NDK_TOOLCHAIN=$NDK_ROOT/toolchains/arm-linux-androideabi-4.8/prebuilt/darwin-x86_64/bin/arm-linux-androideabi
 
 export ANDROID_SDK_ROOT=$HOME/Work/android/adt-bundle-mac-x86_64-20140702/sdk
-export ANDROID_PLATFORM_TOOLS=$ANDROID_SDK_ROOT/platform_tools
+export ANDROID_PLATFORM_TOOLS=$ANDROID_SDK_ROOT/platform-tools
+
+export PATH=$PATH:$ANDROID_PLATFORM_TOOLS:$HOME/bin
 
 alias xgcc=$NDK_TOOLCHAIN-gcc
 alias xld=$NDK_TOOLCHAIN-ld
@@ -44,6 +49,6 @@ if [[ -s "${ZDOTDIR:-$HOME}/.secrets" ]]; then
   source "${ZDOTDIR:-$HOME}/.secrets"
 fi
 
-if [[ -s "${ZDOTDIR:-$HOME}/.zaliases" ]]; then
-  source "${ZDOTDIR:-$HOME}/.zaliases"
+if [[ -s "${ZDOTDIR:-$HOME}/.zaliases.zsh" ]]; then
+  source "${ZDOTDIR:-$HOME}/.zaliases.zsh"
 fi
