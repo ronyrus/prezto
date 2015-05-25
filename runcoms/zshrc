@@ -28,8 +28,6 @@ export NDK_TOOLCHAIN=$NDK_ROOT/toolchains/arm-linux-androideabi-4.8/prebuilt/dar
 export ANDROID_SDK_ROOT=$HOME/Work/android/adt-bundle-mac-x86_64-20140702/sdk
 export ANDROID_PLATFORM_TOOLS=$ANDROID_SDK_ROOT/platform-tools
 
-export PATH=$PATH:$ANDROID_PLATFORM_TOOLS:$HOME/bin
-
 alias xgcc=$NDK_TOOLCHAIN-gcc
 alias xld=$NDK_TOOLCHAIN-ld
 alias xar=$NDK_TOOLCHAIN-ar
@@ -52,3 +50,6 @@ fi
 if [[ -s "${ZDOTDIR:-$HOME}/.zaliases.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zaliases.zsh"
 fi
+
+export PATH=$PATH:$ANDROID_PLATFORM_TOOLS:$HOME/bin
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
