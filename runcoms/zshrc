@@ -14,13 +14,10 @@ fi
 export EDITOR='vim'
 export VISUAL='gvim'
 
-#export PYENV_ROOT=/usr/local/opt/pyenv
-#if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
-
 # auto-correction is driving me nuts
 unsetopt correct
 
-export PYTHONPATH=$HOME/Work/
+export PYTHONPATH=/Library/Python/2.7/site-packages:/usr/local/lib/python2.7/site-packages:$HOME/Work/:$HOME/Work/tools/python
 
 export NDK_ROOT=$HOME/Work/android/android-ndk-r10
 export NDK_TOOLCHAIN=$NDK_ROOT/toolchains/arm-linux-androideabi-4.8/prebuilt/darwin-x86_64/bin/arm-linux-androideabi
@@ -52,4 +49,5 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zaliases.zsh" ]]; then
 fi
 
 export PATH=$PATH:$ANDROID_PLATFORM_TOOLS:$HOME/bin
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+
+export MANPAGER="col -b | vim -c 'set ft=man nomod' -"
